@@ -7,12 +7,13 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class StarShip extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
+	Texture img, tShip;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("bg.png");
+		tShip = new Texture("spaceship.png");
 	}
 
 	@Override
@@ -20,6 +21,7 @@ public class StarShip extends ApplicationAdapter {
 		ScreenUtils.clear(1, 0, 0, 1);
 		batch.begin();
 		batch.draw(img, 0, 0);
+		batch.draw(tShip, 0, 0);
 		batch.end();
 	}
 	
