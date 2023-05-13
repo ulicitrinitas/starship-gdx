@@ -10,7 +10,8 @@ public class StarShip extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img, tShip;
 	private Sprite ship;
-	
+
+	private double posX, posY;
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -24,7 +25,7 @@ public class StarShip extends ApplicationAdapter {
 		ScreenUtils.clear(1, 0, 0, 1);
 		batch.begin();
 		batch.draw(img, 0, 0);
-		batch.draw(ship, 15, 15);
+		batch.draw(ship, getPosX(), getPosY());
 		batch.end();
 	}
 	
@@ -33,4 +34,25 @@ public class StarShip extends ApplicationAdapter {
 		batch.dispose();
 		img.dispose();
 	}
+
+	private void movShip(){
+
+	}
+
+	public double getPosY() {
+		return posY;
+	}
+
+	public void setPosY(double posY) {
+		this.posY = posY;
+	}
+
+	public double getPosX() {
+		return posX;
+	}
+
+	public void setPosX(double posX) {
+		this.posX = posX;
+	}
+
 }
