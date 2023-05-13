@@ -49,6 +49,15 @@ public class StarShip extends ApplicationAdapter {
 		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
 			setPosX(getPosX() + 15);
 		}
+		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
+			setPosX(getPosX() - 15);
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.UP)){
+			setPosY(getPosY() + 15);
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
+			setPosY(getPosY() - 15);
+		}
 
 	}
 
