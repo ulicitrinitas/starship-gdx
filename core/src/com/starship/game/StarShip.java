@@ -14,6 +14,8 @@ public class StarShip extends ApplicationAdapter {
 	private Sprite ship;
 
 	private long posX, posY;
+
+	private final velocity = 10;
 	
 	@Override
 	public void create () {
@@ -47,16 +49,24 @@ public class StarShip extends ApplicationAdapter {
 	private void movShip(){
 
 		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
-			setPosX(getPosX() + 15);
+			if(posX < Gdx.graphics.getWidth() - ship.getWidth()){
+				posX += velocity;
+			}
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
-			setPosX(getPosX() - 15);
+			if(posX > 0){
+				posX -= velocity;
+			}
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.UP)){
-			setPosY(getPosY() + 15);
+			if(posY < Gdx.graphics.getHeight() - ship.getHeight()){
+				posY += velocity;
+			}
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
-			setPosY(getPosY() - 15);
+			if(posY > 0){
+				posY -= velocity;
+			}
 		}
 
 	}
