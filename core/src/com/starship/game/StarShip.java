@@ -4,7 +4,8 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
-import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.GDX;
+import com.badlogic.gdx.Input;
 
 public class StarShip extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -22,6 +23,9 @@ public class StarShip extends ApplicationAdapter {
 
 	@Override
 	public void render () {
+
+		this.movShip();
+
 		ScreenUtils.clear(1, 0, 0, 1);
 		batch.begin();
 		batch.draw(img, 0, 0);
@@ -36,6 +40,10 @@ public class StarShip extends ApplicationAdapter {
 	}
 
 	private void movShip(){
+
+		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
+			setPosX(getPosX() + 5);
+		}
 
 	}
 
