@@ -4,7 +4,8 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
-import com.badlogic.gdx.GDX;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 
 public class StarShip extends ApplicationAdapter {
@@ -12,7 +13,8 @@ public class StarShip extends ApplicationAdapter {
 	Texture img, tShip;
 	private Sprite ship;
 
-	private double posX, posY;
+	private long posX, posY;
+	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -29,7 +31,10 @@ public class StarShip extends ApplicationAdapter {
 		ScreenUtils.clear(1, 0, 0, 1);
 		batch.begin();
 		batch.draw(img, 0, 0);
-		batch.draw(ship, getPosX(), getPosY());
+
+		ship.setPosition(getPosX(), getPosY());
+		ship.draw(batch);
+
 		batch.end();
 	}
 	
@@ -42,24 +47,24 @@ public class StarShip extends ApplicationAdapter {
 	private void movShip(){
 
 		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
-			setPosX(getPosX() + 5);
+			setPosX(getPosX() + 15);
 		}
 
 	}
 
-	public double getPosY() {
+	public long getPosY() {
 		return posY;
 	}
 
-	public void setPosY(double posY) {
+	public void setPosY(long posY) {
 		this.posY = posY;
 	}
 
-	public double getPosX() {
+	public long getPosX() {
 		return posX;
 	}
 
-	public void setPosX(double posX) {
+	public void setPosX(long posX) {
 		this.posX = posX;
 	}
 
