@@ -13,9 +13,7 @@ public class StarShip extends ApplicationAdapter {
 	Texture img, tShip;
 	private Sprite ship;
 
-	private long posX, posY;
-
-	private final velocity = 10;
+	private long posX, posY, velocity;
 	
 	@Override
 	public void create () {
@@ -23,6 +21,8 @@ public class StarShip extends ApplicationAdapter {
 		img = new Texture("bg.png");
 		tShip = new Texture("spaceship.png");
 		ship = new Sprite(tShip);
+
+		velocity = 20;
 	}
 
 	@Override
